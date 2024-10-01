@@ -31,4 +31,31 @@ public class OrderBook {
             lock.unlock();
         }
     }
+    public void matchOrders(){
+        lock.lock();
+        try{
+            while (!buyOrders.isEmpty() && !sellOrders.isEmpty()){
+                Order buyOrder = buyOrders.getFirst();
+                Order sellOrder = sellOrders.getFirst();
+
+                if(buyOrder.getPrice() >= sellOrder.getPrice()){
+                    //process the transaction
+                    int quantityTraded = Math.min(buyOrder.getQuantity(), sellOrder.getQuantity());
+                    buyOrder.reduceQuantity(quantityTraded);
+                    sellOrder.reduceQuantity(quantityTraded);
+
+                    if (buyOrder.getQuantity() == 0){
+                        buyOrders.remove(buyOrder);
+                    }
+                    if (sellOrder.getQuantity() == 0){
+                        sellOrders.remove(sellOrder);
+                    }
+                } else{
+                    break;
+                }
+            }
+        } finally {
+            lock.unlock();
+        }
+    }
 }
