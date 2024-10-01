@@ -14,7 +14,19 @@ public class OrderBook {
         lock.lock();
         try {
             buyOrders.add(order);
+            //sort the buy orders in descending order of price
             buyOrders.sort(Comparator.comparing(Order::getPrice).reversed());
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public void addSellOrder(Order order){
+        lock.lock();
+        try{
+            sellOrders.add(order);
+            //sort the sell orders in ascending order of price
+            sellOrders.sort(Comparator.comparing(Order::getPrice));
         } finally {
             lock.unlock();
         }
