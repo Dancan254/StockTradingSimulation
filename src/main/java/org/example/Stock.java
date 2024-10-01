@@ -11,6 +11,7 @@ public class Stock {
         this.orderBook = new OrderBook();
     }
     public synchronized void updatePrice(double price) {
+        System.out.println("Updating price of " + symbol + " from " + this.price + " to " + price);
         this.price = price;
     }
 
