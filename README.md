@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Stock Market Simulation** is a multithreaded Java program that simulates a stock market where traders buy and sell shares in real-time. The project demonstrates advanced Java concepts such as concurrency, thread pools, and scheduled tasks.
+The **Stock Market Simulation** is a multithreaded Java program that simulates a stock market where traders buy and sell shares. The project demonstrates advanced Java concepts such as concurrency, thread pools, and scheduled tasks.
 
 ## Features
 
