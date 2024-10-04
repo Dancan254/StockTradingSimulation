@@ -3,8 +3,7 @@ package org.example;
 import java.util.List;
 import java.util.concurrent.*;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class StockMarketSim {
     private final ExecutorService tradePool = Executors.newFixedThreadPool(10);
 
