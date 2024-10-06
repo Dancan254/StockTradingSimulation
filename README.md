@@ -32,13 +32,13 @@ src/
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd StockMarketSim
+   git clone https://github.com/Dancan254/StockTradingSimulation
+   cd Stocktradingsimulation 
    ```
    
 2. **Compile and Run**:
    ```bash
-   javac -d out src/org/example/*.java
+   javac -d out <main method>
    java -cp out org.example.StockMarketSim
    ```
 
